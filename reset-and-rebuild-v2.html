@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset & Rebuild™ | 7 Days to Rewire Your Body for Strength</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5f0ea;
+    --cream-dark: #ede5db;
+    --brown-deep: #2c2420;
+    --brown-mid: #4a3829;
+    --brown-warm: #7a6355;
+    --tan: #9a7e68;
+    --border: #e5ddd4;
+    --border-light: #f0ebe4;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: #faf8f5;
+    color: #2c2420;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--cream);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 10vw, 72px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--brown-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title em { font-style: italic; }
+
+  .divider {
+    width: 36px;
+    height: 0.5px;
+    background: var(--tan);
+    margin: 1.25rem auto;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--brown-warm);
+    margin-bottom: 1.25rem;
+  }
+
+  .byline {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tan);
+  }
+
+  /* INTRO */
+  .intro {
+    padding: 2.5rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--brown-mid);
+  }
+
+  /* INTRO VIDEOS */
+  .intro-videos {
+    background: var(--brown-deep);
+    padding: 2.5rem 2rem;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 1.25rem;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    .video-grid { grid-template-columns: 1fr; }
+  }
+
+  .video-card {
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.2s;
+  }
+
+  .video-card:hover { border-color: var(--tan); }
+
+  .video-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0.6;
+  }
+
+  .play-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--tan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .play-triangle {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 12px solid var(--cream);
+    margin-left: 3px;
+  }
+
+  .video-info { padding: 0.85rem 1rem; }
+
+  .video-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.3rem;
+  }
+
+  .video-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+
+  /* REGULATION */
+  .regulation {
+    background: var(--brown-deep);
+    padding: 0 2rem 2.5rem;
+    border-top: 0.5px solid rgba(255,255,255,0.06);
+  }
+
+  .reg-inner { max-width: 640px; margin: 0 auto; }
+
+  .reg-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .reg-body {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #b8a898;
+    margin-bottom: 1.25rem;
+  }
+
+  .breath-box {
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .breath-step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .breath-step:last-child { margin-bottom: 0; }
+
+  .step-num {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 0.5px solid var(--tan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--tan);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: #d4c8bc;
+    line-height: 1.55;
+  }
+
+  /* DAY NAV */
+  .day-nav {
+    background: var(--cream);
+    border-bottom: 0.5px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .day-nav-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .nav-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tan);
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    padding: 0.6rem 1rem;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--tan);
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    background: none;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.15s;
+  }
+
+  .tab:hover { color: var(--brown-deep); }
+  .tab.active { color: var(--brown-deep); border-bottom-color: var(--tan); }
+
+  /* DAY PANELS */
+  .day-panels {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .day-panel {
+    display: none;
+    padding: 2rem 0;
+    animation: fadeUp 0.2s ease;
+  }
+
+  .day-panel.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .phase-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.4rem;
+  }
+
+  .day-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--brown-deep);
+    line-height: 1.05;
+    margin-bottom: 0.2rem;
+  }
+
+  .day-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--tan);
+    margin-bottom: 1.5rem;
+  }
+
+  .pullquote {
+    background: var(--cream);
+    border-left: 2px solid var(--tan);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pullquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--brown-mid);
+    font-style: italic;
+  }
+
+  .focus-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.4rem;
+  }
+
+  .focus-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--brown-warm);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .watch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.4rem;
+    background: var(--brown-deep);
+    color: var(--cream);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-bottom: 1.75rem;
+    font-family: 'Jost', sans-serif;
+    transition: background 0.15s;
+  }
+
+  .watch-btn:hover { background: var(--brown-mid); }
+
+  .play-sm {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid var(--tan);
+  }
+
+  .workout-wrap { margin-bottom: 1.75rem; }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  thead th {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tan);
+    text-align: left;
+    padding: 0 0 0.6rem;
+    border-bottom: 0.5px solid var(--border);
+    font-weight: 400;
+  }
+
+  thead th:not(:first-child) { text-align: center; }
+
+  tbody td {
+    padding: 0.75rem 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--brown-deep);
+    border-bottom: 0.5px solid var(--border-light);
+    vertical-align: middle;
+  }
+
+  tbody td:not(:first-child) {
+    text-align: center;
+    color: var(--brown-warm);
+    font-size: 13px;
+  }
+
+  .num-badge {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    background: var(--cream);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--tan);
+    margin-right: 8px;
+  }
+
+  .minimums {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .min-title {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.9rem;
+  }
+
+  .min-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--brown-mid);
+    line-height: 1.5;
+  }
+
+  .min-item:last-child { margin-bottom: 0; }
+
+  .checkbox {
+    width: 14px;
+    height: 14px;
+    border: 0.5px solid var(--tan);
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .downreg {
+    background: var(--cream-dark);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .downreg-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--brown-mid);
+    margin-bottom: 0.4rem;
+  }
+
+  .downreg-body {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--brown-warm);
+    line-height: 1.6;
+  }
+
+  .downreg-rule {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--tan);
+    margin-top: 0.6rem;
+    font-style: italic;
+  }
+
+  .reflection { margin-bottom: 1rem; }
+
+  .reflection-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.75rem;
+  }
+
+  .reflection-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--brown-mid);
+    padding: 0.75rem 0;
+    border-top: 0.5px solid var(--border);
+    line-height: 1.5;
+  }
+
+  .hr { height: 0.5px; background: var(--border); margin: 1.75rem 0; }
+
+  /* PRINT BUTTON */
+  .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.55rem 1.1rem;
+    border: 0.5px solid var(--tan);
+    color: var(--tan);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 3px;
+    cursor: pointer;
+    background: none;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.15s;
+    margin-top: 1.5rem;
+  }
+
+  .print-btn:hover { background: var(--cream); color: var(--brown-mid); }
+
+  .print-icon {
+    font-size: 13px;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--brown-deep);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .cta-inner { max-width: 480px; margin: 0 auto; }
+
+  .cta-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 1rem;
+  }
+
+  .cta-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .cta-headline em { font-style: italic; }
+
+  .cta-body {
+    font-size: 14px;
+    font-weight: 300;
+    color: #b8a898;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  .cta-lines {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #b8a898;
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background: var(--tan);
+    color: var(--cream);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    transition: background 0.15s;
+  }
+
+  .cta-btn:hover { background: #7a6355; }
+
+  /* FOOTER */
+  .footer {
+    padding: 1.75rem 2rem;
+    text-align: center;
+    border-top: 0.5px solid var(--border);
+    background: var(--cream);
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--brown-mid);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-socials {
+    font-size: 11px;
+    color: var(--tan);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-socials a {
+    color: var(--tan);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-socials a:hover { color: var(--brown-mid); }
+
+  .footer-copy {
+    font-size: 10px;
+    color: #b8a898;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===================== */
+  /* PRINT STYLES          */
+  /* ===================== */
+  @media print {
+    body { background: white; color: black; font-family: 'Jost', Georgia, serif; }
+
+    .hero, .intro, .intro-videos, .regulation, .day-nav, .cta-section, .footer { display: none !important; }
+
+    .day-panels { max-width: 100%; padding: 0; margin: 0; }
+
+    .day-panel { display: none !important; }
+
+    .day-panel.print-target { display: block !important; padding: 0; }
+
+    .print-btn { display: none !important; }
+
+    .print-header {
+      display: flex !important;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1px solid #c8b89a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .print-header-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: #2c2420;
+      line-height: 1.05;
+    }
+
+    .print-header-title em { font-style: italic; }
+
+    .print-header-meta {
+      text-align: right;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9a7e68;
+      line-height: 1.8;
+    }
+
+    .phase-tag { font-size: 9px; letter-spacing: 0.18em; color: #9a7e68; margin-bottom: 0.2rem; }
+
+    .day-title { font-size: 30px; margin-bottom: 0.1rem; color: #2c2420; }
+
+    .day-tagline { font-size: 14px; color: #9a7e68; margin-bottom: 1rem; }
+
+    .pullquote {
+      background: #f5f0ea;
+      border-left: 2px solid #9a7e68;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0;
+    }
+
+    .pullquote p { font-size: 13px; color: #4a3829; }
+
+    .focus-label { font-size: 8px; color: #9a7e68; margin-bottom: 0.2rem; }
+    .focus-text { font-size: 12px; color: #7a6355; margin-bottom: 1rem; }
+
+    .watch-btn { display: none !important; }
+
+    .workout-wrap { margin-bottom: 1rem; }
+
+    table { width: 100%; border-collapse: collapse; }
+    thead th { font-size: 9px; color: #9a7e68; border-bottom: 0.5px solid #e5ddd4; padding: 0 0 0.4rem; }
+    thead th:not(:first-child) { text-align: center; }
+    tbody td { font-size: 12px; padding: 0.5rem 0; border-bottom: 0.5px solid #f0ebe4; color: #2c2420; }
+    tbody td:not(:first-child) { text-align: center; color: #7a6355; font-size: 11px; }
+
+    .num-badge { background: #f5f0ea; font-size: 9px; color: #9a7e68; }
+
+    .minimums { background: #f5f0ea; border-radius: 4px; padding: 0.85rem 1rem; margin-bottom: 1rem; }
+    .min-title { font-size: 8px; color: #9a7e68; margin-bottom: 0.6rem; }
+    .min-item { font-size: 12px; margin-bottom: 6px; color: #4a3829; gap: 8px; }
+    .checkbox { width: 12px; height: 12px; border: 0.5px solid #9a7e68; border-radius: 2px; }
+
+    .downreg { background: #ede5db; border-radius: 4px; padding: 0.75rem 1rem; margin-bottom: 1rem; }
+    .downreg-title { font-size: 13px; color: #4a3829; margin-bottom: 0.3rem; }
+    .downreg-body { font-size: 11px; color: #7a6355; line-height: 1.5; }
+    .downreg-rule { font-size: 10px; color: #9a7e68; margin-top: 0.4rem; }
+
+    .reflection { margin-bottom: 0.5rem; }
+    .reflection-label { font-size: 8px; color: #9a7e68; margin-bottom: 0.5rem; }
+    .reflection-q { font-size: 13px; color: #4a3829; padding: 0.5rem 0; border-top: 0.5px solid #e5ddd4; }
+
+    .hr { margin: 1rem 0; }
+
+    .print-footer {
+      display: block !important;
+      margin-top: 2rem;
+      padding-top: 0.75rem;
+      border-top: 0.5px solid #e5ddd4;
+      font-size: 9px;
+      color: #9a7e68;
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+  }
+
+  /* Hide print-only elements on screen */
+  .print-header { display: none; }
+  .print-footer { display: none; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">P2 Fitness &nbsp;·&nbsp; Coach Paris Simone</div>
+  <div class="hero-title">Reset <em>&</em><br>Rebuild™</div>
+  <div class="divider"></div>
+  <div class="hero-subtitle">7 Days to Rewire Your Body for Strength</div>
+  <div class="byline">Stress Integrated Strength System™</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p>This reset is not about intensity. It is about recalibration. Your only job this week is to reduce chaos. Control without urgency. Strength without burnout.<br><br>You are not starting over. You are coming back to yourself.</p>
+</div>
+
+<!-- INTRO VIDEOS -->
+<div class="intro-videos">
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="section-label">Start Here — Watch Before Day 1</div>
+    <div class="video-grid">
+      <a class="video-card" href="https://youtu.be/tCiBInil-vk?si=KCP6HR61g66pBcEg" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/tCiBInil-vk/mqdefault.jpg" alt="Why You Keep Restarting">
+          <div class="play-btn"><div class="play-triangle"></div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-label">Intro 1</div>
+          <div class="video-title">Why You Keep Restarting</div>
+        </div>
+      </a>
+      <a class="video-card" href="https://youtu.be/lscIz-2iPWg?si=8Poc9eK1xNBrHxRv" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/lscIz-2iPWg/mqdefault.jpg" alt="How To Approach The Next 7 Days">
+          <div class="play-btn"><div class="play-triangle"></div></div>
+        </div>
+        <div class="video-info">
+          <div class="video-label">Intro 2</div>
+          <div class="video-title">How To Approach The Next 7 Days</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- REGULATION INITIATION -->
+<div class="regulation">
+  <div class="reg-inner">
+    <div class="section-label" style="padding-top:2.5rem;">Before Day 1</div>
+    <div class="reg-title">Regulation Initiation — Stop. Do This First.</div>
+    <div class="reg-body">This reset begins with regulation, not intensity. Before we build structure, we downshift. Complete this before moving to Day 1.</div>
+    <div class="breath-box">
+      <div class="breath-step"><div class="step-num">1</div><div class="step-text">Stand tall. Feet grounded.</div></div>
+      <div class="breath-step"><div class="step-num">2</div><div class="step-text">Inhale 4 seconds through your nose.</div></div>
+      <div class="breath-step"><div class="step-num">3</div><div class="step-text">Exhale 6 seconds through your mouth.</div></div>
+      <div class="breath-step"><div class="step-num">4</div><div class="step-text">Repeat for 10 slow breaths. If this feels uncomfortable, that is information, not failure.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY NAV -->
+<div class="day-nav">
+  <div class="day-nav-inner">
+    <div class="nav-label">Your 7 Days</div>
+    <div class="tabs">
+      <button class="tab active" onclick="showDay(0)">Day 1</button>
+      <button class="tab" onclick="showDay(1)">Day 2</button>
+      <button class="tab" onclick="showDay(2)">Day 3</button>
+      <button class="tab" onclick="showDay(3)">Day 4</button>
+      <button class="tab" onclick="showDay(4)">Day 5</button>
+      <button class="tab" onclick="showDay(5)">Day 6</button>
+      <button class="tab" onclick="showDay(6)">Day 7</button>
+    </div>
+  </div>
+</div>
+
+<!-- DAY PANELS -->
+<div class="day-panels">
+
+  <!-- DAY 1 -->
+  <div id="day-0" class="day-panel active">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 1 — Stabilize</div>
+    <div class="day-title">Day 1</div>
+    <div class="day-tagline">Strength begins with stability.</div>
+    <div class="pullquote"><p>Most people don't lack discipline — they lack regulation. Slowing down signals safety. Today is about showing your body that structure does not equal stress.</p></div>
+    <div class="focus-label">Today's Focus</div>
+    <div class="focus-text">Lower body stability + daily minimums. Nothing extreme. Just repetition done well. See Mobility Warm Up.</div>
+    <a class="watch-btn" href="https://youtu.be/c36KShU75jk?si=3OyWrGgdIcdMbfYb" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>Tempo Body Weight Squats</td><td>2</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">2</span>Glute Bridges</td><td>2</td><td>8</td></tr>
+          <tr><td><span class="num-badge">3</span>Superman's</td><td>2</td><td>8</td></tr>
+          <tr><td><span class="num-badge">4</span>Romanian Deadlift</td><td>2</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">5</span>Bird Dogs</td><td>2</td><td>10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums — Your goal is not to do more. Complete what's assigned.</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed workout — no extras</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Arms relaxed by your sides. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Identity Anchor</div>
+      <div class="reflection-q">Where have I been operating from urgency?</div>
+      <div class="reflection-q">What feels chaotic in my routine right now?</div>
+      <div class="reflection-q">What would regulated strength look like this week?</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(0)"><span class="print-icon">⎙</span> Print Day 1</button>
+  </div>
+
+  <!-- DAY 2 -->
+  <div id="day-1" class="day-panel">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 2 — Anchor</div>
+    <div class="day-title">Day 2</div>
+    <div class="day-tagline">Consistency is built through minimums, not motivation.</div>
+    <div class="pullquote"><p>When your body knows what to expect, internal resistance decreases. Anchoring simple habits reduces decision fatigue and stabilizes your nervous system.</p></div>
+    <div class="focus-label">Today's Focus</div>
+    <div class="focus-text">Upper body control + reinforcing daily minimums. Nothing extreme. Just repetition done well. See Mobility Warm Up.</div>
+    <a class="watch-btn" href="https://youtu.be/N-vkyvu2iOE?si=junK2XMQpZdVdcLt" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>Incline Push-Ups (or Wall Push-Ups)</td><td>3</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">2</span>Supported DB or Band Rows</td><td>3</td><td>10</td></tr>
+          <tr><td><span class="num-badge">3</span>Dead Bug</td><td>2–3</td><td>6–8 each side</td></tr>
+          <tr><td><span class="num-badge">4</span>Shoulder Press</td><td>3</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">5</span>Tricep Kickbacks</td><td>3</td><td>10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums — Today is about repetition.</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed workout — no extras</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(1)"><span class="print-icon">⎙</span> Print Day 2</button>
+  </div>
+
+  <!-- DAY 3 -->
+  <div id="day-2" class="day-panel">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 3 — Control</div>
+    <div class="day-title">Day 3</div>
+    <div class="day-tagline">Precision builds confidence.</div>
+    <div class="pullquote"><p>More effort does not equal better results. Controlled reps restore trust between your brain and body. Precision reduces internal noise. Today we move deliberately.</p></div>
+    <div class="focus-label">2 Minute Nasal Breathing Reset</div>
+    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds.</div>
+    <a class="watch-btn" href="https://youtu.be/iXvN1BhnY6k?si=KanmbCiJYHJsH_Vi" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>Tempo Split Squats</td><td>3</td><td>6 per side</td></tr>
+          <tr><td><span class="num-badge">2</span>Romanian Deadlifts</td><td>3</td><td>8</td></tr>
+          <tr><td><span class="num-badge">3</span>Glute Bridge Hold</td><td>3</td><td>3 sec hold</td></tr>
+          <tr><td><span class="num-badge">4</span>Step Back Lunge</td><td>3</td><td>8 per side</td></tr>
+          <tr><td><span class="num-badge">5</span>Plank</td><td>2–3</td><td>20–30 sec hold</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums — Precision builds confidence.</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed workout — no extras</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Reflection</div>
+      <div class="reflection-q">Where am I equating intensity with progress?</div>
+      <div class="reflection-q">What would it feel like to move with control instead of urgency?</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(2)"><span class="print-icon">⎙</span> Print Day 3</button>
+  </div>
+
+  <!-- DAY 4 -->
+  <div id="day-3" class="day-panel">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 4 — Restore & Rebuild</div>
+    <div class="day-title">Day 4</div>
+    <div class="day-tagline">Rest is not passive. It is strategic.</div>
+    <div class="pullquote"><p>If slowing down feels uncomfortable, that's information. A nervous system that never downshifts cannot rebuild. Today is about regulation without guilt. Recovery supports consistency.</p></div>
+    <div class="focus-label">2 Minute Nasal Breathing Reset</div>
+    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds.</div>
+    <a class="watch-btn" href="https://youtu.be/SdANomqrRn4?si=_IsYANualSkDMc88" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>Cat–Cow</td><td>2</td><td>6</td></tr>
+          <tr><td><span class="num-badge">2</span>Cobra Hold</td><td>2</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">3</span>90/90 Hip Rotations</td><td>2</td><td>6 per side</td></tr>
+          <tr><td><span class="num-badge">4</span>Kneeling Hip Flexor Stretch</td><td>2</td><td>6 per side</td></tr>
+          <tr><td><span class="num-badge">5</span>Thoracic Seated Rotations</td><td>2</td><td>6–8 per side</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(3)"><span class="print-icon">⎙</span> Print Day 4</button>
+  </div>
+
+  <!-- DAY 5 -->
+  <div id="day-4" class="day-panel">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 5 — Integrate</div>
+    <div class="day-title">Day 5</div>
+    <div class="day-tagline">Connection over intensity.</div>
+    <div class="pullquote"><p>Strength is coordination, not isolation. When your breath, core, and hips work together, your body feels organized. Today we connect patterns, not chase fatigue.</p></div>
+    <div class="focus-label">2 Minute Nasal Breathing Reset</div>
+    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
+    <a class="watch-btn" href="https://youtu.be/Wp3lZtBJnd8?si=lEbdkIII03DfNMzO" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>Incline Push-Ups</td><td>3</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">2</span>Side Plank</td><td>3</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">3</span>Goblet Squats</td><td>3</td><td>8</td></tr>
+          <tr><td><span class="num-badge">4</span>Band Pull Apart</td><td>3</td><td>12</td></tr>
+          <tr><td><span class="num-badge">5</span>Romanian Deadlifts</td><td>3</td><td>8–10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums — Connection over intensity.</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Reflection</div>
+      <div class="reflection-q">Where did I feel more stable today compared to earlier in the week?</div>
+      <div class="reflection-q">What movement felt the most controlled?</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(4)"><span class="print-icon">⎙</span> Print Day 5</button>
+  </div>
+
+  <!-- DAY 6 -->
+  <div id="day-5" class="day-panel">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 6 — Strengthen</div>
+    <div class="day-title">Day 6</div>
+    <div class="day-tagline">Tension without urgency.</div>
+    <div class="pullquote"><p>Progress does not require exhaustion. Once your body feels organized, you can apply slightly more tension without creating stress. Today we reinforce what you've already established.</p></div>
+    <a class="watch-btn" href="https://youtu.be/BVo8RH3W4lc?si=dunwS6VYKxi1zCrz" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>Step Ups</td><td>3</td><td>8 per side</td></tr>
+          <tr><td><span class="num-badge">2</span>Forearm Plank</td><td>3</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">3</span>Superman Holds</td><td>3</td><td>8–10, 1 sec hold</td></tr>
+          <tr><td><span class="num-badge">4</span>Tempo Split Squats</td><td>3</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">5</span>Dumbbell Facelifts</td><td>3</td><td>8</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums — Tension without urgency.</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Reflection</div>
+      <div class="reflection-q">Where did I feel stronger today compared to earlier in the week?</div>
+      <div class="reflection-q">What movement required the most focus?</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(5)"><span class="print-icon">⎙</span> Print Day 6</button>
+  </div>
+
+  <!-- DAY 7 -->
+  <div id="day-6" class="day-panel">
+    <div class="print-header">
+      <div>
+        <div class="print-header-title">Reset <em>&</em> Rebuild™</div>
+        <div style="font-size:10px;letter-spacing:0.12em;color:#9a7e68;margin-top:4px;">7 Days to Rewire Your Body for Strength</div>
+      </div>
+      <div class="print-header-meta">Coach Paris Simone<br>P2 Fitness<br>Passports 2 Fitness LLC</div>
+    </div>
+    <div class="phase-tag">Phase 7 — Solidify</div>
+    <div class="day-title">Day 7</div>
+    <div class="day-tagline">Consistency is your new baseline.</div>
+    <div class="pullquote"><p>This week was not about intensity. It was about re-establishing structure. When you reduce chaos, your body responds. Strength feels different when it is built from stability.</p></div>
+    <a class="watch-btn" href="https://youtu.be/EEwMyOux6IE?si=_5pAsOXsqZCLJ5PS" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="workout-wrap">
+      <table>
+        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num-badge">1</span>DB Chest Press</td><td>2–3</td><td>8–10</td></tr>
+          <tr><td><span class="num-badge">2</span>Shoulder Taps</td><td>2–3</td><td>10</td></tr>
+          <tr><td><span class="num-badge">3</span>Tricep Kickbacks</td><td>2–3</td><td>10</td></tr>
+          <tr><td><span class="num-badge">4</span>Bicep Curls</td><td>2–3</td><td>10</td></tr>
+          <tr><td><span class="num-badge">5</span>Dead Bugs</td><td>2–3</td><td>6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="minimums">
+      <div class="min-title">Today's Minimums — Consistency is your new baseline.</div>
+      <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
+      <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
+    </div>
+    <div class="downreg">
+      <div class="downreg-title">Down Regulation Before Bed</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Final Reflection</div>
+      <div class="reflection-q">What felt more controlled this week compared to when I started?</div>
+      <div class="reflection-q">Where did I prove to myself that I can follow structure?</div>
+      <div class="reflection-q">What would it look like to maintain this rhythm?</div>
+    </div>
+    <div class="hr"></div>
+    <div style="text-align:center;padding:0.5rem 0 1rem;">
+      <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--tan);margin-bottom:0.6rem;">You completed the reset.</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--brown-mid);">Check your email — your next steps are waiting.</div>
+    </div>
+    <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
+    <button class="print-btn" onclick="printDay(6)"><span class="print-icon">⎙</span> Print Day 7</button>
+  </div>
+
+</div><!-- end day-panels -->
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label">What's Next</div>
+    <div class="cta-headline">Ready to build on<br><em>what you started?</em></div>
+    <div class="cta-body">You just proved you can follow structure. You reduced urgency. You moved with control. Rebuild & Rise is where that foundation becomes real, lasting strength.</div>
+    <div class="cta-lines">
+      When you feel scattered, return to structure.<br>
+      When you feel inconsistent, stabilize.<br>
+      When you're ready to build — rise.
+    </div>
+    <a class="cta-btn" href="https://coachparis.github.io/rebuild-and-rise-sales/" target="_blank" rel="noopener">Learn About Rebuild & Rise</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">Passports 2 Fitness LLC</div>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/coach_paris" target="_blank">@Coach_Paris</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/passports2paris" target="_blank">@Passports2Paris</a>
+  </div>
+  <div class="footer-copy">© Reset & Rebuild™ · Coach Paris Simone</div>
+</div>
+
+<script>
+function showDay(index) {
+  document.querySelectorAll('.day-panel').forEach((p, i) => {
+    p.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+  document.querySelector('.day-nav').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function printDay(index) {
+  document.querySelectorAll('.day-panel').forEach((p, i) => {
+    p.classList.remove('print-target');
+    if (i === index) p.classList.add('print-target');
+  });
+  window.print();
+  setTimeout(() => {
+    document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('print-target'));
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
