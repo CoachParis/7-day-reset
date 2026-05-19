@@ -203,388 +203,406 @@
 
   .reg-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 300;
     color: var(--cream);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .reg-body {
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 15px;
     line-height: 1.7;
-    color: #b8a898;
-    margin-bottom: 1.25rem;
+    color: rgba(245,240,234,0.75);
+    margin-bottom: 1rem;
   }
 
-  .breath-box {
-    background: rgba(255,255,255,0.05);
-    border: 0.5px solid rgba(255,255,255,0.1);
+  .reg-list {
+    background: rgba(255,255,255,0.03);
+    border: 0.5px solid rgba(255,255,255,0.08);
     border-radius: 6px;
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem;
   }
 
-  .breath-step {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin-bottom: 10px;
+  .reg-item {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(245,240,234,0.8);
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.6rem;
   }
 
-  .breath-step:last-child { margin-bottom: 0; }
+  .reg-item:last-child { margin-bottom: 0; }
 
-  .step-num {
-    width: 20px;
-    height: 20px;
+  .reg-item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--tan);
     border-radius: 50%;
-    border: 0.5px solid var(--tan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    color: var(--tan);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .step-text {
-    font-size: 13px;
-    font-weight: 300;
-    color: #d4c8bc;
-    line-height: 1.55;
+    position: absolute;
+    left: 0;
+    top: 0.55em;
   }
 
   /* DAY NAV */
   .day-nav {
     background: var(--cream);
     border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    overflow-x: auto;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
   }
 
-  .day-nav-inner {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .nav-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--tan);
-    padding-top: 0.75rem;
-    padding-bottom: 0.25rem;
-  }
-
-  .tabs {
+  .day-tabs {
     display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    gap: 0;
+    max-width: 1000px;
+    margin: 0 auto;
   }
-
-  .tabs::-webkit-scrollbar { display: none; }
 
   .tab {
-    padding: 0.6rem 1rem;
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-size: 12px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 400;
     color: var(--tan);
-    cursor: pointer;
+    background: transparent;
     border: none;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
     border-bottom: 2px solid transparent;
+    transition: all 0.2s;
     white-space: nowrap;
-    background: none;
-    font-family: 'Jost', sans-serif;
-    transition: all 0.15s;
   }
 
   .tab:hover { color: var(--brown-deep); }
-  .tab.active { color: var(--brown-deep); border-bottom-color: var(--tan); }
+  .tab.active {
+    color: var(--brown-deep);
+    border-bottom-color: var(--brown-deep);
+  }
 
   /* DAY PANELS */
-  .day-panels {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+  .day-panels { max-width: 800px; margin: 0 auto; }
 
   .day-panel {
     display: none;
-    padding: 2rem 0;
-    animation: fadeUp 0.2s ease;
+    padding: 3rem 2rem;
   }
 
   .day-panel.active { display: block; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 
   .phase-tag {
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--tan);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .day-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 300;
     color: var(--brown-deep);
-    line-height: 1.05;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .day-tagline {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 17px;
-    color: var(--tan);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--brown-warm);
     margin-bottom: 1.5rem;
   }
 
   .pullquote {
     background: var(--cream);
     border-left: 2px solid var(--tan);
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
-    border-radius: 0 4px 4px 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .pullquote p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 1.65;
     color: var(--brown-mid);
-    font-style: italic;
   }
 
   .focus-label {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--tan);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .focus-text {
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--brown-warm);
+    font-size: 15px;
     line-height: 1.6;
+    color: var(--brown-mid);
     margin-bottom: 1.5rem;
   }
 
   .watch-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 0.7rem 1.4rem;
-    background: var(--brown-deep);
-    color: var(--cream);
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    gap: 0.5rem;
+    font-size: 13px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 400;
-    border-radius: 3px;
+    color: var(--cream);
+    background: var(--brown-deep);
+    border: 0.5px solid var(--brown-deep);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
     text-decoration: none;
-    margin-bottom: 1.75rem;
-    font-family: 'Jost', sans-serif;
-    transition: background 0.15s;
+    margin-bottom: 2rem;
+    transition: all 0.2s;
   }
 
-  .watch-btn:hover { background: var(--brown-mid); }
+  .watch-btn:hover {
+    background: var(--brown-mid);
+    border-color: var(--brown-mid);
+  }
 
   .play-sm {
     width: 0;
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-left: 8px solid var(--tan);
+    border-left: 8px solid var(--cream);
   }
 
-  .workout-wrap { margin-bottom: 1.75rem; }
+  .workout-wrap {
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+  }
 
-  table { width: 100%; border-collapse: collapse; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
   thead th {
     font-size: 10px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--tan);
     text-align: left;
-    padding: 0 0 0.6rem;
+    padding-bottom: 0.75rem;
     border-bottom: 0.5px solid var(--border);
-    font-weight: 400;
   }
-
-  thead th:not(:first-child) { text-align: center; }
 
   tbody td {
-    padding: 0.75rem 0;
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--brown-deep);
+    font-size: 15px;
+    color: var(--brown-mid);
+    padding: 0.85rem 0;
     border-bottom: 0.5px solid var(--border-light);
-    vertical-align: middle;
   }
 
-  tbody td:not(:first-child) {
-    text-align: center;
-    color: var(--brown-warm);
-    font-size: 13px;
-  }
+  tbody tr:last-child td { border-bottom: none; }
 
   .num-badge {
-    display: inline-flex;
-    width: 18px;
-    height: 18px;
-    background: var(--cream);
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: var(--tan);
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 500;
     border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    color: var(--tan);
-    margin-right: 8px;
+    text-align: center;
+    line-height: 22px;
+    margin-right: 0.5rem;
   }
 
   .minimums {
     background: var(--cream);
+    border: 0.5px solid var(--border);
     border-radius: 6px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .min-title {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--tan);
-    margin-bottom: 0.9rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--brown-deep);
+    margin-bottom: 1rem;
   }
 
   .min-item {
     display: flex;
-    gap: 10px;
     align-items: flex-start;
-    margin-bottom: 9px;
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--brown-mid);
+    gap: 0.75rem;
+    font-size: 15px;
     line-height: 1.5;
+    color: var(--brown-mid);
+    margin-bottom: 0.75rem;
   }
 
   .min-item:last-child { margin-bottom: 0; }
 
   .checkbox {
-    width: 14px;
-    height: 14px;
-    border: 0.5px solid var(--tan);
-    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--tan);
+    border-radius: 3px;
     flex-shrink: 0;
     margin-top: 2px;
   }
 
   .downreg {
-    background: var(--cream-dark);
+    background: var(--brown-deep);
+    color: var(--cream);
+    padding: 1.5rem;
     border-radius: 6px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .downreg-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
-    color: var(--brown-mid);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.75rem;
   }
 
   .downreg-body {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--brown-warm);
+    font-size: 15px;
     line-height: 1.6;
+    color: rgba(245,240,234,0.85);
+    margin-bottom: 1rem;
   }
 
   .downreg-rule {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    color: var(--tan);
-    margin-top: 0.6rem;
+    font-size: 13px;
     font-style: italic;
+    color: var(--tan);
   }
 
-  .reflection { margin-bottom: 1rem; }
+  .reflection {
+    border-top: 0.5px solid var(--border);
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
   .reflection-label {
     font-size: 10px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--tan);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .reflection-q {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 300;
     color: var(--brown-mid);
-    padding: 0.75rem 0;
-    border-top: 0.5px solid var(--border);
-    line-height: 1.5;
+    margin-bottom: 0.75rem;
   }
 
-  .hr { height: 0.5px; background: var(--border); margin: 1.75rem 0; }
+  .hr {
+    height: 0.5px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
 
-  /* PRINT BUTTON */
   .print-btn {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brown-deep);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 0.55rem 1.1rem;
-    border: 0.5px solid var(--tan);
-    color: var(--tan);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 400;
-    border-radius: 3px;
-    cursor: pointer;
-    background: none;
-    font-family: 'Jost', sans-serif;
-    transition: all 0.15s;
-    margin-top: 1.5rem;
+    gap: 0.5rem;
+    transition: all 0.2s;
   }
 
-  .print-btn:hover { background: var(--cream); color: var(--brown-mid); }
+  .print-btn:hover {
+    border-color: var(--tan);
+    color: var(--tan);
+  }
 
-  .print-icon {
-    font-size: 13px;
+  .print-icon { font-size: 16px; }
+
+  /* PRINT STYLES */
+  @media print {
+    body { background: white; }
+    .hero, .intro, .intro-videos, .regulation, .day-nav, .cta-section, .footer, .print-btn {
+      display: none !important;
+    }
+    .day-panel { display: none !important; }
+    .day-panel.print-target { display: block !important; }
+    .print-header { display: block !important; }
+    .print-footer { display: block !important; }
+  }
+
+  .print-header, .print-footer { display: none; }
+
+  .print-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .print-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--brown-deep);
+  }
+
+  .print-header-meta {
+    font-size: 10px;
+    line-height: 1.5;
+    color: var(--tan);
+    text-align: right;
+  }
+
+  .print-footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 0.5px solid var(--border);
+    font-size: 10px;
+    color: var(--tan);
   }
 
   /* CTA */
   .cta-section {
     background: var(--brown-deep);
-    padding: 3rem 2rem;
-    text-align: center;
-    margin-top: 1rem;
+    padding: 4rem 2rem;
   }
 
-  .cta-inner { max-width: 480px; margin: 0 auto; }
+  .cta-inner {
+    max-width: 540px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
   .cta-label {
     font-size: 10px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--tan);
     margin-bottom: 1rem;
@@ -595,265 +613,612 @@
     font-size: 36px;
     font-weight: 300;
     color: var(--cream);
-    line-height: 1.15;
+    line-height: 1.2;
     margin-bottom: 1rem;
   }
 
   .cta-headline em { font-style: italic; }
 
   .cta-body {
-    font-size: 14px;
-    font-weight: 300;
-    color: #b8a898;
+    font-size: 16px;
     line-height: 1.7;
-    margin-bottom: 1.75rem;
+    color: rgba(245,240,234,0.8);
+    margin-bottom: 1.5rem;
   }
 
   .cta-lines {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 15px;
-    color: #b8a898;
-    line-height: 2;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(245,240,234,0.65);
     margin-bottom: 2rem;
   }
 
   .cta-btn {
     display: inline-block;
-    padding: 0.9rem 2.5rem;
-    background: var(--tan);
-    color: var(--cream);
-    font-size: 12px;
-    letter-spacing: 0.16em;
+    font-size: 13px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 400;
-    border-radius: 3px;
+    color: var(--brown-deep);
+    background: var(--cream);
+    border: 0.5px solid var(--cream);
+    padding: 1rem 2rem;
+    border-radius: 4px;
     text-decoration: none;
-    font-family: 'Jost', sans-serif;
-    transition: background 0.15s;
+    transition: all 0.2s;
   }
 
-  .cta-btn:hover { background: #7a6355; }
+  .cta-btn:hover {
+    background: var(--cream-dark);
+    border-color: var(--cream-dark);
+  }
 
   /* FOOTER */
   .footer {
-    padding: 1.75rem 2rem;
+    background: var(--cream);
+    padding: 2rem;
     text-align: center;
     border-top: 0.5px solid var(--border);
-    background: var(--cream);
   }
 
   .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--brown-mid);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brown-deep);
     margin-bottom: 0.5rem;
-    letter-spacing: 0.04em;
   }
 
   .footer-socials {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--tan);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .footer-socials a {
     color: var(--tan);
     text-decoration: none;
-    transition: color 0.15s;
   }
 
-  .footer-socials a:hover { color: var(--brown-mid); }
+  .footer-socials a:hover { color: var(--brown-deep); }
 
   .footer-copy {
-    font-size: 10px;
-    color: #b8a898;
+    font-size: 11px;
+    color: var(--brown-warm);
+  }
+
+  /* TRACKER STYLES */
+  .tracker-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .tracker-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .tracker-intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--brown-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .tracker-intro-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--brown-warm);
+  }
+
+  .tracker-section {
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .tracker-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--brown-deep);
+  }
+
+  .tracker-clear {
+    font-size: 11px;
     letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tan);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  /* ===================== */
-  /* PRINT STYLES          */
-  /* ===================== */
-  @media print {
-    body { background: white; color: black; font-family: 'Jost', Georgia, serif; }
+  .tracker-clear:hover {
+    border-color: var(--tan);
+    background: rgba(154, 126, 104, 0.05);
+  }
 
-    .hero, .intro, .intro-videos, .regulation, .day-nav, .cta-section, .footer { display: none !important; }
+  /* Meal Tracker */
+  .meal-day {
+    background: white;
+    border: 0.5px solid var(--border-light);
+    border-radius: 4px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
 
-    .day-panels { max-width: 100%; padding: 0; margin: 0; }
+  .meal-day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 
-    .day-panel { display: none !important; }
+  .meal-day-name {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brown-deep);
+    font-weight: 500;
+  }
 
-    .day-panel.print-target { display: block !important; padding: 0; }
+  .intensity-group {
+    display: flex;
+    gap: 0.5rem;
+  }
 
-    .print-btn { display: none !important; }
+  .intensity-btn {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tan);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.75rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
 
-    .print-header {
-      display: flex !important;
-      align-items: flex-start;
-      justify-content: space-between;
-      border-bottom: 1px solid #c8b89a;
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-    }
+  .intensity-btn.active {
+    background: var(--tan);
+    color: var(--cream);
+    border-color: var(--tan);
+  }
 
-    .print-header-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 32px;
-      font-weight: 300;
-      color: #2c2420;
-      line-height: 1.05;
-    }
+  .meal-fields {
+    display: grid;
+    gap: 0.75rem;
+  }
 
-    .print-header-title em { font-style: italic; }
+  .meal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
 
-    .print-header-meta {
-      text-align: right;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #9a7e68;
-      line-height: 1.8;
-    }
+  .meal-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tan);
+  }
 
-    .phase-tag { font-size: 9px; letter-spacing: 0.18em; color: #9a7e68; margin-bottom: 0.2rem; }
+  .meal-input {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--brown-mid);
+    background: #fafafa;
+    border: 1px solid var(--border-light);
+    padding: 0.65rem;
+    border-radius: 3px;
+    transition: border-color 0.2s;
+  }
 
-    .day-title { font-size: 30px; margin-bottom: 0.1rem; color: #2c2420; }
+  .meal-input:focus {
+    outline: none;
+    border-color: var(--tan);
+  }
 
-    .day-tagline { font-size: 14px; color: #9a7e68; margin-bottom: 1rem; }
+  /* Hydration Tracker */
+  .hydration-week {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .pullquote {
-      background: #f5f0ea;
-      border-left: 2px solid #9a7e68;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      border-radius: 0;
-    }
+  .hydration-day {
+    background: white;
+    border: 0.5px solid var(--border-light);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
 
-    .pullquote p { font-size: 13px; color: #4a3829; }
-
-    .focus-label { font-size: 8px; color: #9a7e68; margin-bottom: 0.2rem; }
-    .focus-text { font-size: 12px; color: #7a6355; margin-bottom: 1rem; }
-
-    .watch-btn { display: none !important; }
-
-    .workout-wrap { margin-bottom: 1rem; }
-
-    table { width: 100%; border-collapse: collapse; }
-    thead th { font-size: 9px; color: #9a7e68; border-bottom: 0.5px solid #e5ddd4; padding: 0 0 0.4rem; }
-    thead th:not(:first-child) { text-align: center; }
-    tbody td { font-size: 12px; padding: 0.5rem 0; border-bottom: 0.5px solid #f0ebe4; color: #2c2420; }
-    tbody td:not(:first-child) { text-align: center; color: #7a6355; font-size: 11px; }
-
-    .num-badge { background: #f5f0ea; font-size: 9px; color: #9a7e68; }
-
-    .minimums { background: #f5f0ea; border-radius: 4px; padding: 0.85rem 1rem; margin-bottom: 1rem; }
-    .min-title { font-size: 8px; color: #9a7e68; margin-bottom: 0.6rem; }
-    .min-item { font-size: 12px; margin-bottom: 6px; color: #4a3829; gap: 8px; }
-    .checkbox { width: 12px; height: 12px; border: 0.5px solid #9a7e68; border-radius: 2px; }
-
-    .downreg { background: #ede5db; border-radius: 4px; padding: 0.75rem 1rem; margin-bottom: 1rem; }
-    .downreg-title { font-size: 13px; color: #4a3829; margin-bottom: 0.3rem; }
-    .downreg-body { font-size: 11px; color: #7a6355; line-height: 1.5; }
-    .downreg-rule { font-size: 10px; color: #9a7e68; margin-top: 0.4rem; }
-
-    .reflection { margin-bottom: 0.5rem; }
-    .reflection-label { font-size: 8px; color: #9a7e68; margin-bottom: 0.5rem; }
-    .reflection-q { font-size: 13px; color: #4a3829; padding: 0.5rem 0; border-top: 0.5px solid #e5ddd4; }
-
-    .hr { margin: 1rem 0; }
-
-    .print-footer {
-      display: block !important;
-      margin-top: 2rem;
-      padding-top: 0.75rem;
-      border-top: 0.5px solid #e5ddd4;
-      font-size: 9px;
-      color: #9a7e68;
-      letter-spacing: 0.1em;
-      text-align: center;
+  @media (max-width: 600px) {
+    .hydration-day {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
 
-  /* Hide print-only elements on screen */
-  .print-header { display: none; }
-  .print-footer { display: none; }
+  .hydration-date {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brown-deep);
+    font-weight: 500;
+  }
+
+  .water-boxes {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .water-box {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .water-box.filled {
+    background: var(--tan);
+    border-color: var(--tan);
+  }
+
+  .water-box.filled::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .feeling-input {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: var(--brown-mid);
+    background: #fafafa;
+    border: 1px solid var(--border-light);
+    padding: 0.5rem;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  .feeling-input:focus {
+    outline: none;
+    border-color: var(--tan);
+  }
+
+  .hydration-note {
+    font-size: 12px;
+    color: var(--brown-warm);
+    font-style: italic;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.5px solid var(--border-light);
+  }
+
+  /* Sleep Tracker */
+  .sleep-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .sleep-row {
+    display: grid;
+    grid-template-columns: 120px repeat(7, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .sleep-row {
+      grid-template-columns: 100px repeat(7, 1fr);
+      font-size: 12px;
+    }
+  }
+
+  .sleep-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tan);
+  }
+
+  .sleep-cell {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .sleep-input {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: var(--brown-mid);
+    background: transparent;
+    border: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  .sleep-input:focus {
+    outline: none;
+  }
+
+  .sleep-notes {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.5px solid var(--border-light);
+  }
+
+  .sleep-notes-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.5rem;
+  }
+
+  .sleep-notes-input {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--brown-mid);
+    background: white;
+    border: 1px solid var(--border-light);
+    padding: 0.75rem;
+    border-radius: 3px;
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  .sleep-notes-input:focus {
+    outline: none;
+    border-color: var(--tan);
+  }
+
+  /* Mood Tracker */
+  .mood-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .mood-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .mood-day {
+    text-align: center;
+  }
+
+  .mood-day-label {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 0.75rem;
+  }
+
+  .mood-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mood-option {
+    width: 100%;
+    height: 36px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .mood-option[data-mood="energized"] { border-color: #7fb069; }
+  .mood-option[data-mood="good"] { border-color: #a8dadc; }
+  .mood-option[data-mood="neutral"] { border-color: #f0e68c; }
+  .mood-option[data-mood="low"] { border-color: #dda15e; }
+  .mood-option[data-mood="depleted"] { border-color: #bc6c25; }
+
+  .mood-option.selected[data-mood="energized"] { background: #7fb069; }
+  .mood-option.selected[data-mood="good"] { background: #a8dadc; }
+  .mood-option.selected[data-mood="neutral"] { background: #f0e68c; }
+  .mood-option.selected[data-mood="low"] { background: #dda15e; }
+  .mood-option.selected[data-mood="depleted"] { background: #bc6c25; }
+
+  .mood-option.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  .mood-legend {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 600px) {
+    .mood-legend {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .mood-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 12px;
+    color: var(--brown-mid);
+  }
+
+  .mood-legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1.5px solid;
+  }
+
+  .mood-reflection {
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border-light);
+  }
+
+  .mood-reflection-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 1rem;
+  }
+
+  .mood-reflection-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--brown-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .mood-reflection-input {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--brown-mid);
+    background: white;
+    border: 1px solid var(--border-light);
+    padding: 0.75rem;
+    border-radius: 3px;
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    margin-bottom: 1rem;
+  }
+
+  .mood-reflection-input:focus {
+    outline: none;
+    border-color: var(--tan);
+  }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="eyebrow">Passports 2 Fitness &nbsp;·&nbsp; Coach Paris Simone</div>
-  <div class="hero-title">Reset <em>&</em><br>Rebuild™</div>
+  <div class="eyebrow">7 Days to Rewire Your Body for Strength</div>
+  <h1 class="hero-title">Reset <em>&</em> Rebuild<sup style="font-size:0.4em;vertical-align:super;">™</sup></h1>
   <div class="divider"></div>
-  <div class="hero-subtitle">7 Days to Rewire Your Body for Strength</div>
-  <div class="byline">Stress Integrated Strength System™</div>
+  <div class="hero-subtitle">Structure over intensity. Stability over chaos.</div>
+  <div class="byline">Coach Paris Simone · Passports 2 Fitness</div>
 </div>
 
 <!-- INTRO -->
 <div class="intro">
-  <p>This reset is not about intensity. It is about recalibration. Your only job this week is to reduce chaos. Control without urgency. Strength without burnout.<br><br>You are not starting over. You are coming back to yourself.</p>
+  <p>This is not about adding more. It's about stabilizing what already exists. You don't need a harder plan. You need a functional nervous system, a body that responds, and structure you can follow.</p>
 </div>
 
 <!-- INTRO VIDEOS -->
 <div class="intro-videos">
-  <div style="max-width:640px;margin:0 auto;">
-    <div class="section-label">Start Here — Watch Before Day 1</div>
-    <div class="video-grid">
-      <a class="video-card" href="https://youtu.be/tCiBInil-vk?si=KCP6HR61g66pBcEg" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/tCiBInil-vk/mqdefault.jpg" alt="Why You Keep Restarting">
-          <div class="play-btn"><div class="play-triangle"></div></div>
-        </div>
-        <div class="video-info">
-          <div class="video-label">Intro 1</div>
-          <div class="video-title">Why You Keep Restarting</div>
-        </div>
-      </a>
-      <a class="video-card" href="https://youtu.be/lscIz-2iPWg?si=8Poc9eK1xNBrHxRv" target="_blank" rel="noopener">
-        <div class="video-thumb">
-          <img src="https://img.youtube.com/vi/lscIz-2iPWg/mqdefault.jpg" alt="How To Approach The Next 7 Days">
-          <div class="play-btn"><div class="play-triangle"></div></div>
-        </div>
-        <div class="video-info">
-          <div class="video-label">Intro 2</div>
-          <div class="video-title">How To Approach The Next 7 Days</div>
-        </div>
-      </a>
-    </div>
+  <div style="text-align:center;"><div class="section-label">Start Here</div></div>
+  <div class="video-grid">
+    <a class="video-card" href="https://youtu.be/1f7LQBVMyww?si=yDkO7mUumjpuVc9O" target="_blank" rel="noopener">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/1f7LQBVMyww/maxresdefault.jpg" alt="">
+        <div class="play-btn"><div class="play-triangle"></div></div>
+      </div>
+      <div class="video-info">
+        <div class="video-label">Orientation</div>
+        <div class="video-title">What Reset & Rebuild Is</div>
+      </div>
+    </a>
+    <a class="video-card" href="https://youtu.be/zd5F63KcyYc?si=f3IhXzPMSs5ceBIc" target="_blank" rel="noopener">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/zd5F63KcyYc/maxresdefault.jpg" alt="">
+        <div class="play-btn"><div class="play-triangle"></div></div>
+      </div>
+      <div class="video-info">
+        <div class="video-label">Orientation</div>
+        <div class="video-title">What You Need to Begin</div>
+      </div>
+    </a>
   </div>
 </div>
 
-<!-- REGULATION INITIATION -->
+<!-- REGULATION -->
 <div class="regulation">
   <div class="reg-inner">
-    <div class="section-label" style="padding-top:2.5rem;">Before Day 1</div>
-    <div class="reg-title">Regulation Initiation — Stop. Do This First.</div>
-    <div class="reg-body">This reset begins with regulation, not intensity. Before we build structure, we downshift. Complete this before moving to Day 1.</div>
-    <div class="breath-box">
-      <div class="breath-step"><div class="step-num">1</div><div class="step-text">Stand tall. Feet grounded.</div></div>
-      <div class="breath-step"><div class="step-num">2</div><div class="step-text">Inhale 4 seconds through your nose.</div></div>
-      <div class="breath-step"><div class="step-num">3</div><div class="step-text">Exhale 6 seconds through your mouth.</div></div>
-      <div class="breath-step"><div class="step-num">4</div><div class="step-text">Repeat for 10 slow breaths. If this feels uncomfortable, that is information, not failure.</div></div>
+    <div class="reg-title">Nervous System Regulation is Non-Negotiable</div>
+    <div class="reg-body">This program is built on the principle that your body cannot adapt to training if it is stuck in a stress response. Before you add weight, reps, or volume, you have to prove you can regulate.</div>
+    <div class="reg-list">
+      <div class="reg-item">Nasal breathing between exercises — no mouth breathing unless you are mid-rep</div>
+      <div class="reg-item">Complete only what is programmed — no spontaneous cardio, no extra reps</div>
+      <div class="reg-item">5 minutes of downregulation before bed — legs elevated, slow exhales, no phone</div>
+      <div class="reg-item">Anchor protein at two meals minimum — your body needs fuel to stabilize</div>
     </div>
   </div>
 </div>
 
 <!-- DAY NAV -->
 <div class="day-nav">
-  <div class="day-nav-inner">
-    <div class="nav-label">Your 7 Days</div>
-    <div class="tabs">
-      <button class="tab active" onclick="showDay(0)">Day 1</button>
-      <button class="tab" onclick="showDay(1)">Day 2</button>
-      <button class="tab" onclick="showDay(2)">Day 3</button>
-      <button class="tab" onclick="showDay(3)">Day 4</button>
-      <button class="tab" onclick="showDay(4)">Day 5</button>
-      <button class="tab" onclick="showDay(5)">Day 6</button>
-      <button class="tab" onclick="showDay(6)">Day 7</button>
-    </div>
+  <div class="day-tabs">
+    <button class="tab active" onclick="showDay(0)">Day 1</button>
+    <button class="tab" onclick="showDay(1)">Day 2</button>
+    <button class="tab" onclick="showDay(2)">Day 3</button>
+    <button class="tab" onclick="showDay(3)">Day 4</button>
+    <button class="tab" onclick="showDay(4)">Day 5</button>
+    <button class="tab" onclick="showDay(5)">Day 6</button>
+    <button class="tab" onclick="showDay(6)">Day 7</button>
+    <button class="tab" onclick="showDay(7)">Trackers</button>
   </div>
 </div>
 
@@ -869,42 +1234,41 @@
       </div>
       <div class="print-header-meta">Coach Paris Simone<br>Passports 2 Fitness<br>Passports 2 Fitness LLC</div>
     </div>
-    <div class="phase-tag">Phase 1 — Stabilize</div>
+    <div class="phase-tag">Phase 1 — Observe</div>
     <div class="day-title">Day 1</div>
-    <div class="day-tagline">Strength begins with stability.</div>
-    <div class="pullquote"><p>Most people don't lack discipline — they lack regulation. Slowing down signals safety. Today is about showing your body that structure does not equal stress.</p></div>
-    <div class="focus-label">Today's Focus</div>
-    <div class="focus-text">Lower body stability + daily minimums. Nothing extreme. Just repetition done well. See Mobility Warm Up.</div>
-    <a class="watch-btn" href="https://youtu.be/c36KShU75jk?si=3OyWrGgdIcdMbfYb" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="day-tagline">Movement is information.</div>
+    <div class="pullquote"><p>Today is not about performance. It is about gathering data. Your body will show you where it compensates, where it locks, and where it lacks control. Pay attention.</p></div>
+    <div class="focus-label">2 Minute Nasal Breathing Reset</div>
+    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
+    <a class="watch-btn" href="https://youtu.be/CWoyhCmB96Y?si=88_iioCPfF8eOkKy" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
     <div class="workout-wrap">
       <table>
         <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
         <tbody>
-          <tr><td><span class="num-badge">1</span>Tempo Body Weight Squats</td><td>2–3</td><td>8–10</td></tr>
-          <tr><td><span class="num-badge">2</span>Glute Bridges</td><td>2–3</td><td>8</td></tr>
-          <tr><td><span class="num-badge">3</span>Superman's</td><td>2–3</td><td>8</td></tr>
-          <tr><td><span class="num-badge">4</span>Romanian Deadlift</td><td>2–3</td><td>8–10</td></tr>
-          <tr><td><span class="num-badge">5</span>Bird Dogs</td><td>2–3</td><td>10</td></tr>
+          <tr><td><span class="num-badge">1</span>Forearm Plank</td><td>2–3</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">2</span>Glute Bridge Hold</td><td>2–3</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">3</span>Goblet Squats</td><td>2–3</td><td>8</td></tr>
+          <tr><td><span class="num-badge">4</span>Romanian Deadlifts</td><td>2–3</td><td>8</td></tr>
+          <tr><td><span class="num-badge">5</span>Slow Squat to Stand</td><td>2–3</td><td>6</td></tr>
         </tbody>
       </table>
     </div>
     <div class="minimums">
-      <div class="min-title">Today's Minimums — Your goal is not to do more. Complete what's assigned.</div>
+      <div class="min-title">Today's Minimums — Movement is information.</div>
       <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
       <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
-      <div class="min-item"><div class="checkbox"></div>Complete only the programmed workout — no extras</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
       <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
     </div>
     <div class="downreg">
       <div class="downreg-title">Down Regulation Before Bed</div>
-      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Arms relaxed by your sides. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
+      <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
       <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
     </div>
     <div class="reflection">
-      <div class="reflection-label">Identity Anchor</div>
-      <div class="reflection-q">Where have I been operating from urgency?</div>
-      <div class="reflection-q">What feels chaotic in my routine right now?</div>
-      <div class="reflection-q">What would regulated strength look like this week?</div>
+      <div class="reflection-label">Reflection</div>
+      <div class="reflection-q">Where did I feel the most tension today?</div>
+      <div class="reflection-q">What movement felt unstable?</div>
     </div>
     <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
     <button class="print-btn" onclick="printDay(0)"><span class="print-icon">⎙</span> Print Day 1</button>
@@ -919,36 +1283,41 @@
       </div>
       <div class="print-header-meta">Coach Paris Simone<br>Passports 2 Fitness<br>Passports 2 Fitness LLC</div>
     </div>
-    <div class="phase-tag">Phase 2 — Anchor</div>
+    <div class="phase-tag">Phase 2 — Stabilize</div>
     <div class="day-title">Day 2</div>
-    <div class="day-tagline">Consistency is built through minimums, not motivation.</div>
-    <div class="pullquote"><p>When your body knows what to expect, internal resistance decreases. Anchoring simple habits reduces decision fatigue and stabilizes your nervous system.</p></div>
-    <div class="focus-label">Today's Focus</div>
-    <div class="focus-text">Upper body control + reinforcing daily minimums. Nothing extreme. Just repetition done well. See Mobility Warm Up.</div>
-    <a class="watch-btn" href="https://youtu.be/N-vkyvu2iOE?si=junK2XMQpZdVdcLt" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="day-tagline">Control before intensity.</div>
+    <div class="pullquote"><p>Your body does not need more challenge. It needs more control. Today we address instability at the foundation. If your hips and core cannot stabilize, nothing else will function efficiently.</p></div>
+    <div class="focus-label">2 Minute Nasal Breathing Reset</div>
+    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
+    <a class="watch-btn" href="https://youtu.be/lrQ3p_HFVYE?si=ZUKZdCiX8vDLz2H0" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
     <div class="workout-wrap">
       <table>
         <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
         <tbody>
-          <tr><td><span class="num-badge">1</span>Incline Push-Ups (or Wall Push-Ups)</td><td>2–3</td><td>8–10</td></tr>
-          <tr><td><span class="num-badge">2</span>Supported DB or Band Rows</td><td>2–3</td><td>10</td></tr>
-          <tr><td><span class="num-badge">3</span>Dead Bug</td><td>2–3</td><td>6–8 each side</td></tr>
-          <tr><td><span class="num-badge">4</span>Shoulder Press</td><td>2–3</td><td>8–10</td></tr>
-          <tr><td><span class="num-badge">5</span>Tricep Kickbacks</td><td>2–3</td><td>10</td></tr>
+          <tr><td><span class="num-badge">1</span>Shoulder Taps</td><td>2–3</td><td>8–10 per side</td></tr>
+          <tr><td><span class="num-badge">2</span>Side Plank</td><td>2–3</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">3</span>Single-Leg Glute Bridge</td><td>2–3</td><td>8 per side</td></tr>
+          <tr><td><span class="num-badge">4</span>Step Ups</td><td>2–3</td><td>8 per side</td></tr>
+          <tr><td><span class="num-badge">5</span>Dead Bugs</td><td>2–3</td><td>6 per side</td></tr>
         </tbody>
       </table>
     </div>
     <div class="minimums">
-      <div class="min-title">Today's Minimums — Today is about repetition.</div>
+      <div class="min-title">Today's Minimums — Control before intensity.</div>
       <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
       <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
-      <div class="min-item"><div class="checkbox"></div>Complete only the programmed workout — no extras</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
       <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
     </div>
     <div class="downreg">
       <div class="downreg-title">Down Regulation Before Bed</div>
       <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
       <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Reflection</div>
+      <div class="reflection-q">Did anything feel more stable today compared to yesterday?</div>
+      <div class="reflection-q">Where did I have to slow down to maintain control?</div>
     </div>
     <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
     <button class="print-btn" onclick="printDay(1)"><span class="print-icon">⎙</span> Print Day 2</button>
@@ -963,30 +1332,30 @@
       </div>
       <div class="print-header-meta">Coach Paris Simone<br>Passports 2 Fitness<br>Passports 2 Fitness LLC</div>
     </div>
-    <div class="phase-tag">Phase 3 — Control</div>
+    <div class="phase-tag">Phase 3 — Balance</div>
     <div class="day-title">Day 3</div>
-    <div class="day-tagline">Precision builds confidence.</div>
-    <div class="pullquote"><p>More effort does not equal better results. Controlled reps restore trust between your brain and body. Precision reduces internal noise. Today we move deliberately.</p></div>
+    <div class="day-tagline">Symmetry over effort.</div>
+    <div class="pullquote"><p>Your body compensates when it lacks balance. Today we address asymmetries. When one side is weaker or less coordinated, your nervous system becomes overprotective. Balance is not optional.</p></div>
     <div class="focus-label">2 Minute Nasal Breathing Reset</div>
-    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds.</div>
-    <a class="watch-btn" href="https://youtu.be/iXvN1BhnY6k?si=KanmbCiJYHJsH_Vi" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
+    <a class="watch-btn" href="https://youtu.be/r1QYQN_yeSk?si=xRdTv3qC1OjB0WAE" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
     <div class="workout-wrap">
       <table>
         <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
         <tbody>
-          <tr><td><span class="num-badge">1</span>Tempo Split Squats</td><td>2–3</td><td>6 per side</td></tr>
-          <tr><td><span class="num-badge">2</span>Romanian Deadlifts</td><td>2–3</td><td>8</td></tr>
-          <tr><td><span class="num-badge">3</span>Glute Bridge Hold</td><td>2–3</td><td>8–10</td></tr>
-          <tr><td><span class="num-badge">4</span>Step Back Lunge</td><td>2–3</td><td>8 per side</td></tr>
-          <tr><td><span class="num-badge">5</span>Plank</td><td>2–3</td><td>20–30 sec hold</td></tr>
+          <tr><td><span class="num-badge">1</span>Single-Leg RDLs</td><td>2–3</td><td>8 per side</td></tr>
+          <tr><td><span class="num-badge">2</span>Split Squats</td><td>2–3</td><td>8–10 per side</td></tr>
+          <tr><td><span class="num-badge">3</span>Single-Arm Rows</td><td>2–3</td><td>8–10 per side</td></tr>
+          <tr><td><span class="num-badge">4</span>Single-Arm Press</td><td>2–3</td><td>8 per side</td></tr>
+          <tr><td><span class="num-badge">5</span>Suitcase Carry</td><td>2–3</td><td>30 sec per side</td></tr>
         </tbody>
       </table>
     </div>
     <div class="minimums">
-      <div class="min-title">Today's Minimums — Precision builds confidence.</div>
+      <div class="min-title">Today's Minimums — Symmetry over effort.</div>
       <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
       <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
-      <div class="min-item"><div class="checkbox"></div>Complete only the programmed workout — no extras</div>
+      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
       <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
     </div>
     <div class="downreg">
@@ -996,8 +1365,8 @@
     </div>
     <div class="reflection">
       <div class="reflection-label">Reflection</div>
-      <div class="reflection-q">Where am I equating intensity with progress?</div>
-      <div class="reflection-q">What would it feel like to move with control instead of urgency?</div>
+      <div class="reflection-q">Which side felt weaker or less coordinated?</div>
+      <div class="reflection-q">Where did I feel my body compensating?</div>
     </div>
     <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
     <button class="print-btn" onclick="printDay(2)"><span class="print-icon">⎙</span> Print Day 3</button>
@@ -1012,36 +1381,28 @@
       </div>
       <div class="print-header-meta">Coach Paris Simone<br>Passports 2 Fitness<br>Passports 2 Fitness LLC</div>
     </div>
-    <div class="phase-tag">Phase 4 — Restore & Rebuild</div>
+    <div class="phase-tag">Phase 4 — Restore</div>
     <div class="day-title">Day 4</div>
-    <div class="day-tagline">Rest is not passive. It is strategic.</div>
-    <div class="pullquote"><p>If slowing down feels uncomfortable, that's information. A nervous system that never downshifts cannot rebuild. Today is about regulation without guilt. Recovery supports consistency.</p></div>
-    <div class="focus-label">2 Minute Nasal Breathing Reset</div>
-    <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds.</div>
-    <a class="watch-btn" href="https://youtu.be/SdANomqrRn4?si=_IsYANualSkDMc88" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
-    <div class="workout-wrap">
-      <table>
-        <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
-        <tbody>
-          <tr><td><span class="num-badge">1</span>Cat–Cow</td><td>2–3</td><td>6</td></tr>
-          <tr><td><span class="num-badge">2</span>Cobra Hold</td><td>2–3</td><td>20–30 sec hold</td></tr>
-          <tr><td><span class="num-badge">3</span>90/90 Hip Rotations</td><td>2–3</td><td>6 per side</td></tr>
-          <tr><td><span class="num-badge">4</span>Kneeling Hip Flexor Stretch</td><td>2–3</td><td>6 per side</td></tr>
-          <tr><td><span class="num-badge">5</span>Thoracic Seated Rotations</td><td>2–3</td><td>6–8 per side</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <div class="day-tagline">Rest is productive.</div>
+    <div class="pullquote"><p>Recovery is not passive. It is where your nervous system resets and your body adapts. Today we restore without guilt. If you cannot regulate at rest, you will not progress under load.</p></div>
+    <div class="focus-label">15–20 Minute Walk</div>
+    <div class="focus-text">Nasal breathing only. Easy pace. Let your body reset. This is not cardio—it is regulation.</div>
     <div class="minimums">
-      <div class="min-title">Today's Minimums</div>
+      <div class="min-title">Today's Minimums — Rest is productive.</div>
       <div class="min-item"><div class="checkbox"></div>Anchor protein at two meals</div>
-      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally — 60–80 oz minimum</div>
-      <div class="min-item"><div class="checkbox"></div>Complete only the programmed session</div>
+      <div class="min-item"><div class="checkbox"></div>Hydrate intentionally</div>
+      <div class="min-item"><div class="checkbox"></div>Walk for 15–20 minutes — nasal breathing only</div>
       <div class="min-item"><div class="checkbox"></div>5 minutes of downregulation before bed</div>
     </div>
     <div class="downreg">
       <div class="downreg-title">Down Regulation Before Bed</div>
       <div class="downreg-body">Lie on your back with legs elevated on couch or wall. Slow nasal breathing for 5 minutes. Let your ribs soften with each exhale.</div>
       <div class="downreg-rule">No phone. No TV. No multi-tasking.</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">Reflection</div>
+      <div class="reflection-q">How does my body feel after three days of intentional movement?</div>
+      <div class="reflection-q">What have I learned about my nervous system so far?</div>
     </div>
     <div class="print-footer">Reset & Rebuild™ · Coach Paris Simone · Passports 2 Fitness LLC · @Coach_Paris · @Passports2Paris</div>
     <button class="print-btn" onclick="printDay(3)"><span class="print-icon">⎙</span> Print Day 4</button>
@@ -1196,6 +1557,83 @@
     <button class="print-btn" onclick="printDay(6)"><span class="print-icon">⎙</span> Print Day 7</button>
   </div>
 
+  <!-- TRACKERS PANEL -->
+  <div id="trackers" class="day-panel">
+    <div class="tracker-container">
+      <div class="tracker-intro">
+        <div class="tracker-intro-title">Your Reset Trackers</div>
+        <div class="tracker-intro-subtitle">Track your journey. Data is clarity.</div>
+      </div>
+
+      <!-- MEAL STRUCTURE TRACKER -->
+      <div class="tracker-section">
+        <div class="tracker-header">
+          <div class="tracker-title">Daily Meal Structure</div>
+          <button class="tracker-clear" onclick="clearMealData()">Clear All</button>
+        </div>
+        <div id="meal-tracker"></div>
+      </div>
+
+      <!-- HYDRATION TRACKER -->
+      <div class="tracker-section">
+        <div class="tracker-header">
+          <div class="tracker-title">Hydration Tracker</div>
+          <button class="tracker-clear" onclick="clearHydrationData()">Clear All</button>
+        </div>
+        <div id="hydration-tracker"></div>
+        <div class="hydration-note">Minimum: 80–100 oz daily. Add electrolytes on high-intensity days.</div>
+      </div>
+
+      <!-- SLEEP TRACKER -->
+      <div class="tracker-section">
+        <div class="tracker-header">
+          <div class="tracker-title">Sleep Tracker</div>
+          <button class="tracker-clear" onclick="clearSleepData()">Clear All</button>
+        </div>
+        <div id="sleep-tracker"></div>
+      </div>
+
+      <!-- MOOD TRACKER -->
+      <div class="tracker-section">
+        <div class="tracker-header">
+          <div class="tracker-title">Mood Tracker</div>
+          <button class="tracker-clear" onclick="clearMoodData()">Clear All</button>
+        </div>
+        <div class="mood-legend">
+          <div class="mood-legend-item">
+            <div class="mood-legend-color" style="background:#7fb069;border-color:#7fb069;"></div>
+            Energized
+          </div>
+          <div class="mood-legend-item">
+            <div class="mood-legend-color" style="background:#a8dadc;border-color:#a8dadc;"></div>
+            Good
+          </div>
+          <div class="mood-legend-item">
+            <div class="mood-legend-color" style="background:#f0e68c;border-color:#f0e68c;"></div>
+            Neutral
+          </div>
+          <div class="mood-legend-item">
+            <div class="mood-legend-color" style="background:#dda15e;border-color:#dda15e;"></div>
+            Low
+          </div>
+          <div class="mood-legend-item">
+            <div class="mood-legend-color" style="background:#bc6c25;border-color:#bc6c25;"></div>
+            Depleted
+          </div>
+        </div>
+        <div id="mood-tracker"></div>
+        <div class="mood-reflection">
+          <div class="mood-reflection-label">Weekly Reflection</div>
+          <div class="mood-reflection-q">How did my mood shift throughout the 7 days?</div>
+          <textarea class="mood-reflection-input" id="mood-reflection-1" placeholder="Write your reflection..."></textarea>
+          <div class="mood-reflection-q">What patterns did I notice between my mood and my movement?</div>
+          <textarea class="mood-reflection-input" id="mood-reflection-2" placeholder="Write your reflection..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div><!-- end day-panels -->
 
 <!-- CTA -->
@@ -1225,6 +1663,7 @@
 </div>
 
 <script>
+// DAY NAVIGATION
 function showDay(index) {
   document.querySelectorAll('.day-panel').forEach((p, i) => {
     p.classList.toggle('active', i === index);
@@ -1245,6 +1684,273 @@ function printDay(index) {
     document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('print-target'));
   }, 1000);
 }
+
+// MEAL TRACKER
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+function initMealTracker() {
+  const container = document.getElementById('meal-tracker');
+  const savedData = JSON.parse(localStorage.getItem('mealData') || '{}');
+  
+  days.forEach((day, index) => {
+    const dayData = savedData[day] || { intensity: '', protein: '', carb: '', fat: '', fiber: '' };
+    
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'meal-day';
+    dayDiv.innerHTML = `
+      <div class="meal-day-header">
+        <div class="meal-day-name">${day}</div>
+        <div class="intensity-group">
+          <button class="intensity-btn ${dayData.intensity === 'High' ? 'active' : ''}" onclick="setIntensity('${day}', 'High')">High</button>
+          <button class="intensity-btn ${dayData.intensity === 'Moderate' ? 'active' : ''}" onclick="setIntensity('${day}', 'Moderate')">Moderate</button>
+          <button class="intensity-btn ${dayData.intensity === 'Restore' ? 'active' : ''}" onclick="setIntensity('${day}', 'Restore')">Restore</button>
+        </div>
+      </div>
+      <div class="meal-fields">
+        <div class="meal-field">
+          <div class="meal-label">Protein Source</div>
+          <input type="text" class="meal-input" value="${dayData.protein}" onchange="saveMealField('${day}', 'protein', this.value)">
+        </div>
+        <div class="meal-field">
+          <div class="meal-label">Carb Source</div>
+          <input type="text" class="meal-input" value="${dayData.carb}" onchange="saveMealField('${day}', 'carb', this.value)">
+        </div>
+        <div class="meal-field">
+          <div class="meal-label">Fat Source</div>
+          <input type="text" class="meal-input" value="${dayData.fat}" onchange="saveMealField('${day}', 'fat', this.value)">
+        </div>
+        <div class="meal-field">
+          <div class="meal-label">Vegetables / Fiber</div>
+          <input type="text" class="meal-input" value="${dayData.fiber}" onchange="saveMealField('${day}', 'fiber', this.value)">
+        </div>
+      </div>
+    `;
+    container.appendChild(dayDiv);
+  });
+}
+
+function setIntensity(day, intensity) {
+  const data = JSON.parse(localStorage.getItem('mealData') || '{}');
+  if (!data[day]) data[day] = {};
+  data[day].intensity = intensity;
+  localStorage.setItem('mealData', JSON.stringify(data));
+  location.reload();
+}
+
+function saveMealField(day, field, value) {
+  const data = JSON.parse(localStorage.getItem('mealData') || '{}');
+  if (!data[day]) data[day] = {};
+  data[day][field] = value;
+  localStorage.setItem('mealData', JSON.stringify(data));
+}
+
+function clearMealData() {
+  if (confirm('Clear all meal tracking data?')) {
+    localStorage.removeItem('mealData');
+    location.reload();
+  }
+}
+
+// HYDRATION TRACKER
+function initHydrationTracker() {
+  const container = document.getElementById('hydration-tracker');
+  const savedData = JSON.parse(localStorage.getItem('hydrationData') || '{}');
+  
+  const weekDiv = document.createElement('div');
+  weekDiv.className = 'hydration-week';
+  
+  days.forEach(day => {
+    const dayData = savedData[day] || { water: 0, feeling: '' };
+    
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'hydration-day';
+    dayDiv.innerHTML = `
+      <div class="hydration-date">${day}</div>
+      <div class="water-boxes">
+        ${[20, 40, 60, 80, 100].map(oz => `
+          <div class="water-box ${dayData.water >= oz ? 'filled' : ''}" onclick="toggleWater('${day}', ${oz})" title="${oz} oz"></div>
+        `).join('')}
+      </div>
+      <input type="text" class="feeling-input" placeholder="How I'm feeling..." value="${dayData.feeling}" onchange="saveFeeling('${day}', this.value)">
+    `;
+    weekDiv.appendChild(dayDiv);
+  });
+  
+  container.appendChild(weekDiv);
+}
+
+function toggleWater(day, oz) {
+  const data = JSON.parse(localStorage.getItem('hydrationData') || '{}');
+  if (!data[day]) data[day] = { water: 0, feeling: '' };
+  
+  if (data[day].water >= oz) {
+    data[day].water = oz - 20;
+  } else {
+    data[day].water = oz;
+  }
+  
+  localStorage.setItem('hydrationData', JSON.stringify(data));
+  location.reload();
+}
+
+function saveFeeling(day, feeling) {
+  const data = JSON.parse(localStorage.getItem('hydrationData') || '{}');
+  if (!data[day]) data[day] = { water: 0 };
+  data[day].feeling = feeling;
+  localStorage.setItem('hydrationData', JSON.stringify(data));
+}
+
+function clearHydrationData() {
+  if (confirm('Clear all hydration data?')) {
+    localStorage.removeItem('hydrationData');
+    location.reload();
+  }
+}
+
+// SLEEP TRACKER
+function initSleepTracker() {
+  const container = document.getElementById('sleep-tracker');
+  const savedData = JSON.parse(localStorage.getItem('sleepData') || '{}');
+  
+  const grid = document.createElement('div');
+  grid.className = 'sleep-grid';
+  
+  const shortDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  
+  // Header row
+  const headerRow = document.createElement('div');
+  headerRow.className = 'sleep-row';
+  headerRow.innerHTML = '<div class="sleep-label"></div>' + 
+    shortDays.map(d => `<div class="sleep-label">${d}</div>`).join('');
+  grid.appendChild(headerRow);
+  
+  // Sleep time row
+  const sleepRow = document.createElement('div');
+  sleepRow.className = 'sleep-row';
+  sleepRow.innerHTML = '<div class="sleep-label">Sleep Time</div>' + 
+    days.map(day => {
+      const dayData = savedData[day] || {};
+      return `<div class="sleep-cell"><input type="time" class="sleep-input" value="${dayData.sleepTime || ''}" onchange="saveSleepField('${day}', 'sleepTime', this.value)"></div>`;
+    }).join('');
+  grid.appendChild(sleepRow);
+  
+  // Hours slept row
+  const hoursRow = document.createElement('div');
+  hoursRow.className = 'sleep-row';
+  hoursRow.innerHTML = '<div class="sleep-label">Hours Slept</div>' + 
+    days.map(day => {
+      const dayData = savedData[day] || {};
+      return `<div class="sleep-cell"><input type="text" class="sleep-input" placeholder="7.5" value="${dayData.hours || ''}" onchange="saveSleepField('${day}', 'hours', this.value)"></div>`;
+    }).join('');
+  grid.appendChild(hoursRow);
+  
+  // Wake time row
+  const wakeRow = document.createElement('div');
+  wakeRow.className = 'sleep-row';
+  wakeRow.innerHTML = '<div class="sleep-label">Wake Time</div>' + 
+    days.map(day => {
+      const dayData = savedData[day] || {};
+      return `<div class="sleep-cell"><input type="time" class="sleep-input" value="${dayData.wakeTime || ''}" onchange="saveSleepField('${day}', 'wakeTime', this.value)"></div>`;
+    }).join('');
+  grid.appendChild(wakeRow);
+  
+  container.appendChild(grid);
+  
+  // Notes section
+  const notesDiv = document.createElement('div');
+  notesDiv.className = 'sleep-notes';
+  notesDiv.innerHTML = `
+    <div class="sleep-notes-label">Notes</div>
+    <textarea class="sleep-notes-input" placeholder="Track patterns, challenges, or observations about your sleep this week..." onchange="saveSleepNotes(this.value)">${savedData.notes || ''}</textarea>
+  `;
+  container.appendChild(notesDiv);
+}
+
+function saveSleepField(day, field, value) {
+  const data = JSON.parse(localStorage.getItem('sleepData') || '{}');
+  if (!data[day]) data[day] = {};
+  data[day][field] = value;
+  localStorage.setItem('sleepData', JSON.stringify(data));
+}
+
+function saveSleepNotes(value) {
+  const data = JSON.parse(localStorage.getItem('sleepData') || '{}');
+  data.notes = value;
+  localStorage.setItem('sleepData', JSON.stringify(data));
+}
+
+function clearSleepData() {
+  if (confirm('Clear all sleep data?')) {
+    localStorage.removeItem('sleepData');
+    location.reload();
+  }
+}
+
+// MOOD TRACKER
+function initMoodTracker() {
+  const container = document.getElementById('mood-tracker');
+  const savedData = JSON.parse(localStorage.getItem('moodData') || '{}');
+  
+  const grid = document.createElement('div');
+  grid.className = 'mood-grid';
+  
+  days.forEach((day, index) => {
+    const dayNum = index + 1;
+    const dayMood = savedData[`day${dayNum}`] || '';
+    
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'mood-day';
+    dayDiv.innerHTML = `
+      <div class="mood-day-label">Day ${dayNum}</div>
+      <div class="mood-options">
+        ${['energized', 'good', 'neutral', 'low', 'depleted'].map(mood => `
+          <div class="mood-option ${dayMood === mood ? 'selected' : ''}" data-mood="${mood}" onclick="setMood(${dayNum}, '${mood}')"></div>
+        `).join('')}
+      </div>
+    `;
+    grid.appendChild(dayDiv);
+  });
+  
+  container.appendChild(grid);
+  
+  // Load reflections
+  document.getElementById('mood-reflection-1').value = savedData.reflection1 || '';
+  document.getElementById('mood-reflection-2').value = savedData.reflection2 || '';
+  
+  // Save reflections on change
+  document.getElementById('mood-reflection-1').addEventListener('change', function() {
+    saveMoodReflection('reflection1', this.value);
+  });
+  document.getElementById('mood-reflection-2').addEventListener('change', function() {
+    saveMoodReflection('reflection2', this.value);
+  });
+}
+
+function setMood(dayNum, mood) {
+  const data = JSON.parse(localStorage.getItem('moodData') || '{}');
+  data[`day${dayNum}`] = mood;
+  localStorage.setItem('moodData', JSON.stringify(data));
+  location.reload();
+}
+
+function saveMoodReflection(field, value) {
+  const data = JSON.parse(localStorage.getItem('moodData') || '{}');
+  data[field] = value;
+  localStorage.setItem('moodData', JSON.stringify(data));
+}
+
+function clearMoodData() {
+  if (confirm('Clear all mood data?')) {
+    localStorage.removeItem('moodData');
+    location.reload();
+  }
+}
+
+// INITIALIZE ALL TRACKERS
+initMealTracker();
+initHydrationTracker();
+initSleepTracker();
+initMoodTracker();
 </script>
 
 </body>
