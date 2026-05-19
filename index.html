@@ -1052,6 +1052,7 @@
     cursor: pointer;
     transition: all 0.2s;
     position: relative;
+    background: transparent;
   }
 
   .mood-option[data-mood="energized"] { border-color: #7fb069; }
@@ -1060,11 +1061,11 @@
   .mood-option[data-mood="low"] { border-color: #dda15e; }
   .mood-option[data-mood="depleted"] { border-color: #bc6c25; }
 
-  .mood-option.selected[data-mood="energized"] { background: #7fb069; }
-  .mood-option.selected[data-mood="good"] { background: #a8dadc; }
-  .mood-option.selected[data-mood="neutral"] { background: #f0e68c; }
-  .mood-option.selected[data-mood="low"] { background: #dda15e; }
-  .mood-option.selected[data-mood="depleted"] { background: #bc6c25; }
+  .mood-option.selected[data-mood="energized"] { background: #7fb069 !important; }
+  .mood-option.selected[data-mood="good"] { background: #a8dadc !important; }
+  .mood-option.selected[data-mood="neutral"] { background: #f0e68c !important; }
+  .mood-option.selected[data-mood="low"] { background: #dda15e !important; }
+  .mood-option.selected[data-mood="depleted"] { background: #bc6c25 !important; }
 
   .mood-option.selected::after {
     content: '✓';
@@ -1171,9 +1172,9 @@
 <div class="intro-videos">
   <div style="text-align:center;"><div class="section-label">Start Here</div></div>
   <div class="video-grid">
-    <a class="video-card" href="https://youtu.be/1f7LQBVMyww?si=yDkO7mUumjpuVc9O" target="_blank" rel="noopener">
+    <a class="video-card" href="https://youtu.be/IDGeRrFhouA?si=WoAA8W-Qrl6ylMlz" target="_blank" rel="noopener">
       <div class="video-thumb">
-        <img src="https://img.youtube.com/vi/1f7LQBVMyww/maxresdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/IDGeRrFhouA/maxresdefault.jpg" alt="">
         <div class="play-btn"><div class="play-triangle"></div></div>
       </div>
       <div class="video-info">
@@ -1181,9 +1182,9 @@
         <div class="video-title">What Reset & Rebuild Is</div>
       </div>
     </a>
-    <a class="video-card" href="https://youtu.be/zd5F63KcyYc?si=f3IhXzPMSs5ceBIc" target="_blank" rel="noopener">
+    <a class="video-card" href="https://youtu.be/Dgv_f81pr_o?si=0jR_ip_ZQhZTJUzD" target="_blank" rel="noopener">
       <div class="video-thumb">
-        <img src="https://img.youtube.com/vi/zd5F63KcyYc/maxresdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/Dgv_f81pr_o/maxresdefault.jpg" alt="">
         <div class="play-btn"><div class="play-triangle"></div></div>
       </div>
       <div class="video-info">
@@ -1240,7 +1241,7 @@
     <div class="pullquote"><p>Today is not about performance. It is about gathering data. Your body will show you where it compensates, where it locks, and where it lacks control. Pay attention.</p></div>
     <div class="focus-label">2 Minute Nasal Breathing Reset</div>
     <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
-    <a class="watch-btn" href="https://youtu.be/CWoyhCmB96Y?si=88_iioCPfF8eOkKy" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <a class="watch-btn" href="https://youtu.be/c36KShU75jk?si=3OyWrGgdIcdMbfYb" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
     <div class="workout-wrap">
       <table>
         <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
@@ -1289,7 +1290,7 @@
     <div class="pullquote"><p>Your body does not need more challenge. It needs more control. Today we address instability at the foundation. If your hips and core cannot stabilize, nothing else will function efficiently.</p></div>
     <div class="focus-label">2 Minute Nasal Breathing Reset</div>
     <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
-    <a class="watch-btn" href="https://youtu.be/lrQ3p_HFVYE?si=ZUKZdCiX8vDLz2H0" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <a class="watch-btn" href="https://youtu.be/N-vkyvu2iOE?si=junK2XMQpZdVdcLt" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
     <div class="workout-wrap">
       <table>
         <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
@@ -1338,7 +1339,7 @@
     <div class="pullquote"><p>Your body compensates when it lacks balance. Today we address asymmetries. When one side is weaker or less coordinated, your nervous system becomes overprotective. Balance is not optional.</p></div>
     <div class="focus-label">2 Minute Nasal Breathing Reset</div>
     <div class="focus-text">Inhale 4 seconds. Exhale 6 seconds. Move fluidly. No rushing between exercises.</div>
-    <a class="watch-btn" href="https://youtu.be/r1QYQN_yeSk?si=xRdTv3qC1OjB0WAE" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
+    <a class="watch-btn" href="https://youtu.be/iXvN1BhnY6k?si=KanmbCiJYHJsH_Vi" target="_blank" rel="noopener"><div class="play-sm"></div>Watch Today's Full Workout</a>
     <div class="workout-wrap">
       <table>
         <thead><tr><th>Workout</th><th>Sets</th><th>Reps</th></tr></thead>
@@ -1671,6 +1672,7 @@ function showDay(index) {
   document.querySelectorAll('.tab').forEach((t, i) => {
     t.classList.toggle('active', i === index);
   });
+  localStorage.setItem('activeTab', index.toString());
   document.querySelector('.day-nav').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
@@ -1734,6 +1736,7 @@ function setIntensity(day, intensity) {
   if (!data[day]) data[day] = {};
   data[day].intensity = intensity;
   localStorage.setItem('mealData', JSON.stringify(data));
+  localStorage.setItem('activeTab', '7');
   location.reload();
 }
 
@@ -1747,6 +1750,7 @@ function saveMealField(day, field, value) {
 function clearMealData() {
   if (confirm('Clear all meal tracking data?')) {
     localStorage.removeItem('mealData');
+    localStorage.setItem('activeTab', '7');
     location.reload();
   }
 }
@@ -1790,6 +1794,7 @@ function toggleWater(day, oz) {
   }
   
   localStorage.setItem('hydrationData', JSON.stringify(data));
+  localStorage.setItem('activeTab', '7');
   location.reload();
 }
 
@@ -1803,6 +1808,7 @@ function saveFeeling(day, feeling) {
 function clearHydrationData() {
   if (confirm('Clear all hydration data?')) {
     localStorage.removeItem('hydrationData');
+    localStorage.setItem('activeTab', '7');
     location.reload();
   }
 }
@@ -1882,6 +1888,7 @@ function saveSleepNotes(value) {
 function clearSleepData() {
   if (confirm('Clear all sleep data?')) {
     localStorage.removeItem('sleepData');
+    localStorage.setItem('activeTab', '7');
     location.reload();
   }
 }
@@ -1930,6 +1937,7 @@ function setMood(dayNum, mood) {
   const data = JSON.parse(localStorage.getItem('moodData') || '{}');
   data[`day${dayNum}`] = mood;
   localStorage.setItem('moodData', JSON.stringify(data));
+  localStorage.setItem('activeTab', '7');
   location.reload();
 }
 
@@ -1942,6 +1950,7 @@ function saveMoodReflection(field, value) {
 function clearMoodData() {
   if (confirm('Clear all mood data?')) {
     localStorage.removeItem('moodData');
+    localStorage.setItem('activeTab', '7');
     location.reload();
   }
 }
@@ -1951,6 +1960,14 @@ initMealTracker();
 initHydrationTracker();
 initSleepTracker();
 initMoodTracker();
+
+// RESTORE ACTIVE TAB ON PAGE LOAD
+window.addEventListener('DOMContentLoaded', function() {
+  const activeTab = localStorage.getItem('activeTab');
+  if (activeTab !== null) {
+    showDay(parseInt(activeTab));
+  }
+});
 </script>
 
 </body>
