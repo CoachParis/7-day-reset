@@ -1053,6 +1053,13 @@
     transition: all 0.2s;
     position: relative;
     background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brown-warm);
   }
 
   .mood-option[data-mood="energized"] { border-color: #7fb069; }
@@ -1061,23 +1068,11 @@
   .mood-option[data-mood="low"] { border-color: #dda15e; }
   .mood-option[data-mood="depleted"] { border-color: #bc6c25; }
 
-  .mood-option.selected[data-mood="energized"] { background: #7fb069 !important; }
-  .mood-option.selected[data-mood="good"] { background: #a8dadc !important; }
-  .mood-option.selected[data-mood="neutral"] { background: #f0e68c !important; }
-  .mood-option.selected[data-mood="low"] { background: #dda15e !important; }
-  .mood-option.selected[data-mood="depleted"] { background: #bc6c25 !important; }
-
-  .mood-option.selected::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  }
+  .mood-option.selected[data-mood="energized"] { background: #7fb069 !important; color: white; }
+  .mood-option.selected[data-mood="good"] { background: #a8dadc !important; color: white; }
+  .mood-option.selected[data-mood="neutral"] { background: #f0e68c !important; color: var(--brown-deep); }
+  .mood-option.selected[data-mood="low"] { background: #dda15e !important; color: white; }
+  .mood-option.selected[data-mood="depleted"] { background: #bc6c25 !important; color: white; }
 
   .mood-legend {
     display: grid;
@@ -1572,6 +1567,7 @@
           <div class="tracker-title">Daily Meal Structure</div>
           <button class="tracker-clear" onclick="clearMealData()">Clear All</button>
         </div>
+        <div style="font-size:13px;color:var(--brown-warm);margin-bottom:1.5rem;font-style:italic;">Track your training intensity and macros for each day. Click the intensity level, then fill in your food sources.</div>
         <div id="meal-tracker"></div>
       </div>
 
@@ -1581,6 +1577,7 @@
           <div class="tracker-title">Hydration Tracker</div>
           <button class="tracker-clear" onclick="clearHydrationData()">Clear All</button>
         </div>
+        <div style="font-size:13px;color:var(--brown-warm);margin-bottom:1.5rem;font-style:italic;">Click the water boxes to track your daily intake in 20oz increments. Note how you're feeling each day.</div>
         <div id="hydration-tracker"></div>
         <div class="hydration-note">Minimum: 80–100 oz daily. Add electrolytes on high-intensity days.</div>
       </div>
@@ -1591,6 +1588,7 @@
           <div class="tracker-title">Sleep Tracker</div>
           <button class="tracker-clear" onclick="clearSleepData()">Clear All</button>
         </div>
+        <div style="font-size:13px;color:var(--brown-warm);margin-bottom:1.5rem;font-style:italic;">Enter your sleep and wake times — hours slept will calculate automatically. Add notes to track patterns.</div>
         <div id="sleep-tracker"></div>
       </div>
 
@@ -1600,6 +1598,7 @@
           <div class="tracker-title">Mood Tracker</div>
           <button class="tracker-clear" onclick="clearMoodData()">Clear All</button>
         </div>
+        <div style="font-size:13px;color:var(--brown-warm);margin-bottom:1.5rem;font-style:italic;">Click one colored box per day to track your mood. Each color represents how you felt that day (see legend below).</div>
         <div class="mood-legend">
           <div class="mood-legend-item">
             <div class="mood-legend-color" style="background:#7fb069;border-color:#7fb069;"></div>
@@ -1834,19 +1833,19 @@ function initSleepTracker() {
   const sleepRow = document.createElement('div');
   sleepRow.className = 'sleep-row';
   sleepRow.innerHTML = '<div class="sleep-label">Sleep Time</div>' + 
-    days.map(day => {
+    days.map((day, idx) => {
       const dayData = savedData[day] || {};
-      return `<div class="sleep-cell"><input type="time" class="sleep-input" value="${dayData.sleepTime || ''}" onchange="saveSleepField('${day}', 'sleepTime', this.value)"></div>`;
+      return `<div class="sleep-cell"><input type="time" class="sleep-input" id="sleep-${idx}" value="${dayData.sleepTime || ''}" onchange="calculateSleepHours('${day}', ${idx})"></div>`;
     }).join('');
   grid.appendChild(sleepRow);
   
-  // Hours slept row
+  // Hours slept row (auto-calculated, read-only)
   const hoursRow = document.createElement('div');
   hoursRow.className = 'sleep-row';
   hoursRow.innerHTML = '<div class="sleep-label">Hours Slept</div>' + 
-    days.map(day => {
+    days.map((day, idx) => {
       const dayData = savedData[day] || {};
-      return `<div class="sleep-cell"><input type="text" class="sleep-input" placeholder="7.5" value="${dayData.hours || ''}" onchange="saveSleepField('${day}', 'hours', this.value)"></div>`;
+      return `<div class="sleep-cell"><input type="text" class="sleep-input" id="hours-${idx}" placeholder="—" value="${dayData.hours || ''}" readonly style="background:#fafafa;cursor:default;"></div>`;
     }).join('');
   grid.appendChild(hoursRow);
   
@@ -1854,9 +1853,9 @@ function initSleepTracker() {
   const wakeRow = document.createElement('div');
   wakeRow.className = 'sleep-row';
   wakeRow.innerHTML = '<div class="sleep-label">Wake Time</div>' + 
-    days.map(day => {
+    days.map((day, idx) => {
       const dayData = savedData[day] || {};
-      return `<div class="sleep-cell"><input type="time" class="sleep-input" value="${dayData.wakeTime || ''}" onchange="saveSleepField('${day}', 'wakeTime', this.value)"></div>`;
+      return `<div class="sleep-cell"><input type="time" class="sleep-input" id="wake-${idx}" value="${dayData.wakeTime || ''}" onchange="calculateSleepHours('${day}', ${idx})"></div>`;
     }).join('');
   grid.appendChild(wakeRow);
   
@@ -1870,6 +1869,46 @@ function initSleepTracker() {
     <textarea class="sleep-notes-input" placeholder="Track patterns, challenges, or observations about your sleep this week..." onchange="saveSleepNotes(this.value)">${savedData.notes || ''}</textarea>
   `;
   container.appendChild(notesDiv);
+}
+
+function calculateSleepHours(day, idx) {
+  const sleepTime = document.getElementById(`sleep-${idx}`).value;
+  const wakeTime = document.getElementById(`wake-${idx}`).value;
+  
+  // Save the times first
+  const data = JSON.parse(localStorage.getItem('sleepData') || '{}');
+  if (!data[day]) data[day] = {};
+  data[day].sleepTime = sleepTime;
+  data[day].wakeTime = wakeTime;
+  
+  // Calculate hours if both times are set
+  if (sleepTime && wakeTime) {
+    const [sleepHour, sleepMin] = sleepTime.split(':').map(Number);
+    const [wakeHour, wakeMin] = wakeTime.split(':').map(Number);
+    
+    let sleepMinutes = sleepHour * 60 + sleepMin;
+    let wakeMinutes = wakeHour * 60 + wakeMin;
+    
+    // If wake time is earlier in the day than sleep time, it's the next day
+    if (wakeMinutes <= sleepMinutes) {
+      wakeMinutes += 24 * 60; // Add 24 hours
+    }
+    
+    const totalMinutes = wakeMinutes - sleepMinutes;
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    
+    const hoursSlept = minutes > 0 ? `${hours}.${Math.round(minutes / 60 * 10)}` : `${hours}`;
+    data[day].hours = hoursSlept;
+    
+    // Update the display
+    document.getElementById(`hours-${idx}`).value = hoursSlept;
+  } else {
+    data[day].hours = '';
+    document.getElementById(`hours-${idx}`).value = '';
+  }
+  
+  localStorage.setItem('sleepData', JSON.stringify(data));
 }
 
 function saveSleepField(day, field, value) {
@@ -1911,7 +1950,7 @@ function initMoodTracker() {
       <div class="mood-day-label">Day ${dayNum}</div>
       <div class="mood-options">
         ${['energized', 'good', 'neutral', 'low', 'depleted'].map(mood => `
-          <div class="mood-option ${dayMood === mood ? 'selected' : ''}" data-mood="${mood}" onclick="setMood(${dayNum}, '${mood}')"></div>
+          <div class="mood-option ${dayMood === mood ? 'selected' : ''}" data-mood="${mood}" onclick="setMood(${dayNum}, '${mood}')">${mood}</div>
         `).join('')}
       </div>
     `;
